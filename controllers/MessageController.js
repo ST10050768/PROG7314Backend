@@ -144,22 +144,25 @@ exports.sendMessage = async (req, res) => {
     const displayName = senderType === 'Provider' ? providerName : customerName;
 
     const message = {
-      notification: {
-        title: `New message from ${displayName}`,
-        body: content
-      },
-      data: {
-        title: `New message from ${displayName}`,
-        body: content,
-        threadId: String(threadId),
-        senderId: String(senderId),
-        senderType: String(senderType),
-        providerName: providerName,
-        content: String(content),
-        profileUrl: profileUrl
-      },
-      token
-    };
+  notification: {
+    title: `New message from ${displayName}`,
+    body: content
+  },
+  data: {
+    title: `New message from ${displayName}`,
+    body: content,
+    threadId: String(threadId),
+    senderId: String(senderId),
+    senderType: String(senderType),
+    providerName: providerName,
+    content: String(content),
+    profileUrl: profileUrl
+  },
+  android: {
+    priority: 'high'
+  },
+  token
+};
 
     console.log('Sending FCM message payload:', message);
 
