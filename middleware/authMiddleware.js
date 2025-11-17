@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 require('dotenv').config();
 
-const serviceAccount = require('../prog7314poe-firebase-adminsdk-fbsvc-f157dfd39d.json');
+const serviceAccount = require('../prog7314poe-firebase-adminsdk-fbsvc-22ecf7e4af.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
