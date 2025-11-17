@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('../prog7314poe-firebase-adminsdk-fbsvc-22ecf7e4af.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
 console.log("Using Firebase key:", serviceAccount.private_key_id);
 
