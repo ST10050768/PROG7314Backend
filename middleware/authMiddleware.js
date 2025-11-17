@@ -1,11 +1,4 @@
-const admin = require('firebase-admin');
-require('dotenv').config();
-
-const serviceAccount = require('../prog7314poe-firebase-adminsdk-fbsvc-22ecf7e4af.json');
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+const admin = require('../client/firebase-admin');
 
 module.exports = async function (req, res, next) {
   const token = req.headers.authorization?.split('Bearer ')[1];
